@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package contest;
+
+message Contest {
+  string name = 1;
+  int64 startTimeSeconds = 2;
+}
+
+service ContestService {
+  rpc GetUpcomingContests (ContestRequest) returns (ContestList) {}
+}
+
+message ContestRequest {
+  bool includeGym = 1;
+}
+
+message ContestList {
+  repeated Contest contests = 1;
+}

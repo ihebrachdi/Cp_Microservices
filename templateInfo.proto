@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package template;
+
+
+message Template {
+  string id = 1;
+  string creator = 2;
+  string description = 3;
+  string language = 4;
+
+}
+
+message GetTempReq {
+  string tocken = 1;
+}
+
+message GetTempRes {
+  Template template = 1;
+}
+
+message CreateTempReq {
+  string creator = 1;
+  string description = 2;
+  string language = 3;
+}
+
+message CreateTempRes {
+  string tocken = 1;
+}
+
+
+message SearchTemplatesReq {
+  string query = 1;
+}
+
+message SearchTemplatesRes {
+  repeated Template ctemplates = 1;
+}
+
+message DeleteTemplateRequest {
+  string tocken = 1;
+}
+
+message DeleteTemplateResponse {
+  bool success = 1;
+}
+
+service TemplateService {
+  rpc GetTemplate(GetTempReq) returns (GetTempRes); 
+  rpc SearchTemplates(SearchTemplatesReq) returns (SearchTemplatesRes); 
+  rpc CreateTemplate(CreateTempReq) returns (CreateTempRes);
+  rpc DeleteTemplate(DeleteTemplateRequest) returns (DeleteTemplateResponse);
+  
+}
