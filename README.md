@@ -40,14 +40,14 @@ The API gateway exposes the following endpoints:
   {
     "creator": "John Doe",
     "description": "Template description",
-    "language": "English"
+    "language": "C++"
   }
   ```
   Example Response:
 
   ```json
   {
-    "creator": "John Doe","token": "abcd1234"
+    "creator": "John","token": "abcd1234"
   }
   ```
   
