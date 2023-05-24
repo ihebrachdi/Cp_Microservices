@@ -1,8 +1,8 @@
 {
-  "name": "todolist",
+  "name": "cp",
   "version": "1.0.0",
-  "description": "",
-  "main": "actorMicroservice.js",
+  "description": "grpc rest api",
+  "main": "cpHelperMicroservice.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

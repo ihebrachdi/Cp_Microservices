@@ -70,6 +70,7 @@ app.get('/creator/:id', (req, res) => {
 
 
 app.post('/template', (req, res) => {
+  console.log(req.body);
   const { creator, description, language } = req.body;
   clientTemplates.createTemplate({ creator: creator, description: description, language: language }, (err, response) => {
     if (err) {

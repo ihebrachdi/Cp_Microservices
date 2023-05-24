@@ -66,7 +66,7 @@ const templateService = {
 
   createTemplate: (call, callback) => {
     const { query } = call.request;
-    // console.log(call.request);
+    console.log(call.request);
     const temp = {
       id: generateRandomString(),
       creator: call.request.creator,
@@ -78,7 +78,7 @@ const templateService = {
       tocken: temp.id,
     }
     templates.push(temp);
-    console.log(tocken);
+    console.log(temp);
     callback(null, tocken);
   },
   deleteTemplate: (call, callback) => {
