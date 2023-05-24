@@ -4,6 +4,7 @@ const protoLoader = require('@grpc/proto-loader');
 const axios = require('axios');
 
 const contestpPath = 'contest.proto';
+
 const packageDefinition = protoLoader.loadSync(contestpPath, {
     keepCase: true,
     longs: String,
@@ -31,7 +32,6 @@ const contestService = {
     }
 
 };
-
 
 
 function fetchUpcomingContests(includeGym) {
@@ -67,7 +67,7 @@ server.bindAsync(`0.0.0.0:${port}`, grpc.ServerCredentials.createInsecure(), (er
     console.log(`Server is running on port ${port}`);
     server.start();
 });
-console.log(`Movie microservice running on port ${port}`);
+console.log(`Templates microservice running on port ${port}`);
 
 
 

@@ -33,18 +33,12 @@ const contestProtoDefinition = protoLoader.loadSync(contestpPath, {
 const contestProto = grpc.loadPackageDefinition(contestProtoDefinition).contest;
 const templateProto = grpc.loadPackageDefinition(templeteProtoDefinition).template;
 
-const clientMovies = new movieProto.MovieService(
-  'localhost:50051',
-  grpc.credentials.createInsecure()
-);
+
 const clientTemplates = new templateProto.TemplateService(
   'localhost:50060',
   grpc.credentials.createInsecure()
 );
-const clientTVShows = new tvShowProto.TVShowService(
-  'localhost:50052',
-  grpc.credentials.createInsecure()
-);
+
 const clientContest = new contestProto.ContestService(
   'localhost:50057',
   grpc.credentials.createInsecure()
@@ -52,7 +46,7 @@ const clientContest = new contestProto.ContestService(
 
 app.use(cors());
 
-// Define your API endpoints and routes here
+
 
 app.listen(3000, () => {
   console.log('API Gateway server is running on port 3000');
@@ -67,7 +61,7 @@ app.get('/creator/:id', (req, res) => {
     if (err) {
       res.status(500).send(err);
     } else {
-      console.log("fffff");
+      // console.log("fffff");
       res.json(response.ctemplates);
     }
   });
@@ -87,11 +81,11 @@ app.post('/template', (req, res) => {
   });
 })
 
-// app.put('/movies/:id', (req, res) => {
+// app.put('/templates/:id', (req, res) => {
 //   console.log("test");
 //   const id = req.params.id;
 //   const { title, description } = req.body;
-//   clientMovies.updateMovie({ movie_id: id, title: title, description: description }, (err, response) => {
+//   clientMovies.updateMovie({ tocken: id, name: title, description: description }, (err, response) => {
 //     if (err) {
 //       console.log("error in fuck")
 //       res.status(500).send(err);
@@ -107,7 +101,7 @@ app.delete('/del/:id', (req, res) => {
   const id = req.params.id;
   clientTemplates.DeleteTemplate({ tocken: id }, (err, response) => {
     if (err) {
-      console.log("ccc");
+
 
       res.status(500).send(err);
     } else {
@@ -115,7 +109,7 @@ app.delete('/del/:id', (req, res) => {
       res.json(response.success);
     }
   });
-  console.log("shit" + id);
+
 })
 
 app.get('/templates/:id', (req, res) => {

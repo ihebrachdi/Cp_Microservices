@@ -28,15 +28,15 @@ function generateRandomString() {
 const templates = [
   {
     id: '1',
-    creator: 'iheb',
-    description: 'This is the first example movie.',
-    language: 'cpp',
+    creator: 'tourist',
+    description: 'def main():\n    # Write your code here\n    pass\n\nif __name__ == "__main__":\n    main()',
+    language: 'Python',
   },
   {
     id: '2',
-    creator: 'Example Movie 1',
-    description: 'This is the first example movie.',
-    language: 'cpp',
+    creator: 'SeconThread',
+    description: 'include <iostream>\n\nint main() {\n    // Write your code here\n    return 0;\n}',
+    language: 'C++',
   },
 
 ];
@@ -113,4 +113,4 @@ server.bindAsync(`0.0.0.0:${port}`, grpc.ServerCredentials.createInsecure(), (er
   console.log(`Server is running on port ${port}`);
   server.start();
 });
-console.log(`Movie microservice running on port ${port}`);
+console.log(`Templates microservice running on port ${port}`);
